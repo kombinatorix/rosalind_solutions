@@ -1,0 +1,18 @@
+"""
+https://rosalind.info/problems/lexf/
+"""
+from collections import Counter
+from src.utils import io
+from itertools import combinations_with_replacement
+
+
+def compute_kmers(alphabet, k):
+    ordered_alphabet = alphabet.split()
+    return ["".join(el) for el in combinations_with_replacement(ordered_alphabet, k)]
+
+
+if __name__ == "__main__":
+
+    data, filename = io.read_data("lexf")
+    solution = compute_kmers(data[0], int(data[1]))
+    io.write_data(solution=solution, filename=filename)
