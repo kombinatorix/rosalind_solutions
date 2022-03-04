@@ -24,6 +24,14 @@ class GeneticString(object):
     def overlap_k(self, other_gen_string, k: int):
         return self.gen_string[-k:] == other_gen_string.gen_string[:k]
 
+    def max_overlap(self, other_gen_string):
+        n = len(self.gen_string)
+        for k in range(n, 0, -1):
+            if self.overlap_k(other_gen_string, k):
+                return k
+        else:
+            return 0
+
 
 if __name__ == "__main__":
     genestic_string = GeneticString(
