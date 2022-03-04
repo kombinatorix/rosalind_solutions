@@ -4,11 +4,7 @@ https://rosalind.info/problems/mer/
 from src.utils import io
 
 
-def empty_list():
-    return []
-
-
-def merge_sort(seq1, seq2):
+def merge(seq1, seq2):
     int_seq1 = list(map(lambda x: int(x), seq1.split(" ")))
     int_seq2 = list(map(lambda x: int(x), seq2.split(" ")))
     left_idx, right_idx = 0, 0
@@ -37,6 +33,6 @@ if __name__ == "__main__":
     #    "3",
     #    "-5 11 12",
     # ]
-    solution = merge_sort(data[1], data[3])
+    solution = merge(data[1], data[3])
     # print(solution)
     io.write_data(solution=solution, filename=filename)
