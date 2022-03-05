@@ -1,5 +1,5 @@
 """
-https://rosalind.info/problems/dna/
+https://rosalind.info/problems/par/
 """
 from src.utils import io
 from src.utils.converter import string_to_list_ints, list_ints_to_string
