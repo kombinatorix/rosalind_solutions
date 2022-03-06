@@ -1,7 +1,7 @@
 """
 https://rosalind.info/problems/par3/
 """
-from src.utils import io
+from src.utils.io import read_data, write_data
 from src.utils.converter import string_to_list_ints, list_ints_to_string
 
 # Todo: in place
@@ -20,9 +20,7 @@ def partition(seq):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_data("par3")
-    # data = ["9", "4 5 6 4 1 2 5 7 4"]
+    data, filename = read_data("par3")
     solution = partition(string_to_list_ints(data[1]))
     solution = [list_ints_to_string(solution)]
-    # print(solution)
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

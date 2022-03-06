@@ -1,11 +1,12 @@
 """
 https://rosalind.info/problems/revp/
 """
-from src.utils import io, mappings
+from src.utils.io import read_fasta, write_data
+from src.utils.mappings import dna_complements
 
 
 def is_reverse_palindrome(string):
-    return string == "".join([mappings.dna_complements[el] for el in string[::-1]])
+    return string == "".join([dna_complements[el] for el in string[::-1]])
 
 
 def locating_restriction_sites(genetic_string):
@@ -20,7 +21,6 @@ def locating_restriction_sites(genetic_string):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_fasta("revp")
+    data, filename = read_fasta("revp")
     solution = locating_restriction_sites(data[0])
-    print(solution)
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

@@ -1,7 +1,7 @@
 """
 https://rosalind.info/problems/bins/
 """
-from src.utils import io
+from src.utils.io import read_data, write_data
 
 
 def binary_search(sorted_list_of_ints, searched_value):
@@ -34,13 +34,6 @@ def values_present(search_for, search_in):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_data("bins")
-    # data = [
-    #    "5",
-    #    "6",
-    #    "10 20 30 40 50",
-    #    "40 10 35 15 40 20",
-    # ]
+    data, filename = read_data("bins")
     solution = values_present(data[3], data[2])
-    # print(solution)
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

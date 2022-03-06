@@ -1,7 +1,7 @@
 """
 https://rosalind.info/problems/sign/
 """
-from src.utils import io
+from src.utils.io import read_data, write_data
 from itertools import permutations, product
 
 
@@ -18,7 +18,6 @@ def compute_signed_permutations(n):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_data("sign")
-    # data = ["2"]
+    data, filename = read_data("sign")
     solution = compute_signed_permutations(int(data[0]))
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

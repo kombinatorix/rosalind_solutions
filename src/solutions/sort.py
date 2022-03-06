@@ -1,7 +1,7 @@
 """
 https://rosalind.info/problems/rear/
 """
-from src.utils import io
+from src.utils.io import read_data, write_data
 from multiprocessing import Pool
 from importlib import machinery
 import networkx as nx
@@ -97,10 +97,6 @@ def calculate_list_of_reversal_distances(sequences):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_data("sort")
-    # data = [
-    #    "1 2 3 4 5 6 7 8 9 10",
-    #    "1 8 9 3 2 7 6 5 4 10",
-    # ]
+    data, filename = read_data("sort")
     solution = calculate_list_of_reversal_distances(data)
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

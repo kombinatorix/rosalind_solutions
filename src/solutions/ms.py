@@ -2,7 +2,7 @@
 https://rosalind.info/problems/ms/
 """
 from heapq import merge
-from src.utils import io
+from src.utils.io import read_data, write_data
 from functools import reduce
 
 
@@ -52,11 +52,6 @@ def merge(seq1, seq2):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_data("ms")
-    # data = [
-    #    "10",
-    #    "20 19 35 -18 17 -20 20 1 4 41 13",
-    # ]
+    data, filename = read_data("ms")
     solution = merge_sort(data[1])
-    # print(solution)
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

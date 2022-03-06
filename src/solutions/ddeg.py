@@ -1,7 +1,7 @@
 """
 https://rosalind.info/problems/ddeg/
 """
-from src.utils import io
+from src.utils.io import read_data, write_data
 
 
 def sum_of_neighboordegrees(neighborhood, list_of_neighbors):
@@ -31,14 +31,6 @@ def double_degree_array(info, edge_sequence):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_data("ddeg")
-    # data = [
-    #    "5 4",
-    #    "1 2",
-    #    "2 3",
-    #    "4 3",
-    #    "2 4",
-    # ]
+    data, filename = read_data("ddeg")
     solution = double_degree_array(data[0], data[1:])
-    # print(solution)
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

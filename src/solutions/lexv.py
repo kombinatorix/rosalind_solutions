@@ -1,8 +1,7 @@
 """
 https://rosalind.info/problems/lexv/
 """
-from collections import Counter
-from src.utils import io
+from src.utils.io import read_data, write_data
 from itertools import combinations_with_replacement
 
 
@@ -18,6 +17,6 @@ def compute_kmers(alphabet, k):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_data("lexv")
+    data, filename = read_data("lexv")
     solution = compute_kmers(data[0], int(data[1]))
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

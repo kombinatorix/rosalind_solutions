@@ -1,8 +1,7 @@
 """
 https://rosalind.info/problems/inod/
 """
-from collections import Counter
-from src.utils import io
+from src.utils.io import read_data, write_data
 
 
 def compute_internal_nodes(n):
@@ -11,6 +10,6 @@ def compute_internal_nodes(n):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_data("inod")
+    data, filename = read_data("inod")
     solution = compute_internal_nodes(int(data[0]))
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

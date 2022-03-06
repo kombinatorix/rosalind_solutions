@@ -1,7 +1,7 @@
 """
 https://rosalind.info/problems/mer/
 """
-from src.utils import io
+from src.utils.io import read_data, write_data
 
 
 def merge(seq1, seq2):
@@ -26,13 +26,6 @@ def merge(seq1, seq2):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_data("mer")
-    # data = [
-    #    "4",
-    #    "2 4 10 18",
-    #    "3",
-    #    "-5 11 12",
-    # ]
+    data, filename = read_data("mer")
     solution = merge(data[1], data[3])
-    # print(solution)
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

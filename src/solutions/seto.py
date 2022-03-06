@@ -1,8 +1,7 @@
 """
 https://rosalind.info/problems/seto/
 """
-from collections import Counter
-from src.utils import io
+from src.utils.io import read_data, write_data
 
 
 def forming_sets(n, set_a, set_b):
@@ -26,12 +25,6 @@ def forming_sets(n, set_a, set_b):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_data("seto")
-    # data = [
-    #    "10",
-    #    "{1, 2, 3, 4, 5}",
-    #    "{2, 8, 5, 10}",
-    # ]
+    data, filename = read_data("seto")
     solution = forming_sets(int(data[0]), eval(data[1]), eval(data[2]))
-    # print(solution)
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

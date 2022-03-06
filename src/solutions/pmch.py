@@ -2,7 +2,7 @@
 https://rosalind.info/problems/pmch/
 """
 from collections import Counter
-from src.utils import io
+from src.utils.io import read_fasta, write_data
 import math
 
 
@@ -14,6 +14,6 @@ def compute_number_of_perfect_matchings(genetic_string):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_fasta("pmch")
+    data, filename = read_fasta("pmch")
     solution = compute_number_of_perfect_matchings(data[0])
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

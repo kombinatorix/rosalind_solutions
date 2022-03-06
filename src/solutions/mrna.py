@@ -1,13 +1,13 @@
 """
 https://rosalind.info/problems/mrna/
 """
-from src.utils import io
+from src.utils.io import read_data, write_data
 from src.utils.mappings import inverse_rna_codon_table
 from collections import defaultdict
 
 
 def inferring_mrna_from_prot(sequence):
-    modulo = 1000000
+    modulo = 1_000_000
     prod = 1
     for el in sequence:
         prod *= len(inverse_rna_codon_table[el])
@@ -17,7 +17,6 @@ def inferring_mrna_from_prot(sequence):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_data("mrna")
-    # data = ["MA"]
+    data, filename = read_data("mrna")
     solution = inferring_mrna_from_prot(data[0])
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

@@ -1,7 +1,7 @@
 """
 https://rosalind.info/problems/deg/
 """
-from src.utils import io
+from src.utils.io import read_data, write_data
 
 
 def empty_list():
@@ -23,17 +23,6 @@ def degree_array(info, edge_sequence):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_data("deg")
-    # data = [
-    #    "6 7",
-    #    "1 2",
-    #    "2 3",
-    #    "6 3",
-    #    "5 6",
-    #    "2 5",
-    #    "2 4",
-    #    "4 1",
-    # ]
+    data, filename = read_data("deg")
     solution = degree_array(data[0], data[1:])
-    # print(solution)
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

@@ -1,7 +1,7 @@
 """
 https://rosalind.info/problems/2sum/
 """
-from src.utils import io
+from src.utils.io import read_data, write_data
 
 
 def get_indices(sequence):
@@ -25,14 +25,6 @@ def compute_indices(sequences):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_data("2sum")
-    # data = [
-    #    "4 5",
-    #    "2 -3 4 10 5",
-    #    "8 2 4 -2 -8",
-    #    "-5 2 3 2 -4",
-    #    "5 4 -5 6 8",
-    # ]
+    data, filename = read_data("2sum")
     solution = compute_indices(data[1:])
-    # print(solution)
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

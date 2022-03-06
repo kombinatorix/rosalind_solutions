@@ -1,12 +1,8 @@
 """
 https://rosalind.info/problems/iprb/
 """
-from collections import Counter
-from src.utils import io
+from src.utils.io import read_data, write_data
 from math import comb
-
-# def number_outcome(k,m,n):
-#    return 2*k+m, m+2*n # dominant, recessive
 
 
 def mendels_first_law(k, m, n):
@@ -26,7 +22,6 @@ def mendels_first_law(k, m, n):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_data("iprb")
-    # data = ["2 2 2"]
+    data, filename = read_data("iprb")
     solution = mendels_first_law(*map(lambda x: int(x), data[0].split(" ")))
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

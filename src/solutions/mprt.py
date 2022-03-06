@@ -2,7 +2,7 @@
 https://rosalind.info/problems/mprt/
 """
 
-from src.utils import io
+from src.utils.io import read_data, write_data
 from src.utils.genetic_string import GeneticString
 import requests
 import regex
@@ -26,6 +26,6 @@ def finding_protein_motif(list_of_access_ids):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_data("mprt")
+    data, filename = read_data("mprt")
     solution = finding_protein_motif(data)
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

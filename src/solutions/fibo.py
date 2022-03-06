@@ -1,7 +1,7 @@
 """
 https://rosalind.info/problems/fibo/
 """
-from src.utils import io
+from src.utils.io import read_data, write_data
 
 
 def calculate_fibonacci(n):
@@ -16,8 +16,6 @@ def calculate_fibonacci(n):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_data("fibo")
-    # data = ["6"]
+    data, filename = read_data("fibo")
     solution = calculate_fibonacci(int(data[0]))
-    # print(solution)
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

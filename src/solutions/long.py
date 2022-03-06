@@ -1,7 +1,7 @@
 """
 https://rosalind.info/problems/long/
 """
-from src.utils import io
+from src.utils.io import read_fasta, write_data
 from src.utils.genetic_string import GeneticString
 
 
@@ -32,18 +32,7 @@ def compute_shortest_superstring(genetic_strings):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_fasta("long")
-    # data = [
-    #    ">Rosalind_56",
-    #    "ATTAGACCTG",
-    #    ">Rosalind_57",
-    #    "CCTGCCGGAA",
-    #    ">Rosalind_58",
-    #    "AGACCTGCCG",
-    #    ">Rosalind_59",
-    #    "GCCGGAATAC",
-    # ]
-    # data = io.data_to_genetic_string(data)
+    data, filename = read_fasta("long")
     solution = compute_shortest_superstring(data)
     print(solution)
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

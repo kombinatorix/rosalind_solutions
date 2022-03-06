@@ -1,7 +1,7 @@
 """
 https://rosalind.info/problems/pdst/
 """
-from src.utils import io
+from src.utils.io import read_fasta, write_data
 
 
 def hamming_distance(sequence_1, sequence_2):
@@ -24,17 +24,6 @@ def compute_gc_content(genetic_strings):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_fasta("pdst")
-    # data = [
-    #    ">Rosalind_9499",
-    #    "TTTCCATTTA",
-    #    ">Rosalind_0942",
-    #    "GATTCATTTC",
-    #    ">Rosalind_6568",
-    #    "TTTCCATTTT",
-    #    ">Rosalind_1833",
-    #    "GTTCCATTTA",
-    # ]
-    # data = io.data_to_genetic_string(data)
+    data, filename = read_fasta("pdst")
     solution = compute_gc_content(data)
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

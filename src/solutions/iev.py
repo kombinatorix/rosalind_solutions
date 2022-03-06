@@ -1,12 +1,8 @@
 """
 https://rosalind.info/problems/iev/
 """
-from collections import Counter
-from src.utils import io
+from src.utils.io import read_data, write_data
 from math import comb
-
-# def number_outcome(k,m,n):
-#    return 2*k+m, m+2*n # dominant, recessive
 
 
 def compute_expected_offspring(population):
@@ -32,15 +28,9 @@ def compute_expected_offspring(population):
         )
     ]
 
-    # print(sum([(idx + 1) * el * pr_x[idx] for idx, el in enumerate(population)]))
-
-    # return [f"{dominant_combinations / number_of_total_outcomes:.5f}"]
-
 
 if __name__ == "__main__":
 
-    data, filename = io.read_data("iev")
-    # data = ["1 0 0 1 0 1"]
+    data, filename = read_data("iev")
     solution = compute_expected_offspring(map(lambda x: int(x), data[0].split(" ")))
-    # print(solution)
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

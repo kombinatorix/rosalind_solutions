@@ -1,7 +1,7 @@
 """
 https://rosalind.info/problems/ins/
 """
-from src.utils import io
+from src.utils.io import read_data, write_data
 
 
 def insertion_sort(n, element_list):
@@ -19,11 +19,6 @@ def insertion_sort(n, element_list):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_data("ins")
-    # data = [
-    #    "6",
-    #    "6 10 4 5 1 2",
-    # ]
+    data, filename = read_data("ins")
     solution = insertion_sort(int(data[0]), data[1])
-    # print(solution)
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

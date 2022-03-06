@@ -1,7 +1,7 @@
 """
 https://rosalind.info/problems/qs/
 """
-from src.utils import io
+from src.utils.io import read_data, write_data
 from src.utils.converter import string_to_list_ints, list_ints_to_string
 
 # Todo: in place
@@ -22,9 +22,7 @@ def quicksort(seq):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_data("qs")
-    # data = ["7", "5 -2 4 7 8 -10 11"]
+    data, filename = read_data("qs")
     solution = quicksort(string_to_list_ints(data[1]))
     solution = [list_ints_to_string(solution)]
-    # print(solution)
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

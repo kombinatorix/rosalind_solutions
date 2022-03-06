@@ -1,7 +1,7 @@
 """
 https://rosalind.info/problems/lcsm/
 """
-from src.utils import io
+from src.utils.io import read_fasta, write_data
 
 
 def compute_gc_content(genetic_strings):
@@ -30,6 +30,6 @@ def compute_gc_content(genetic_strings):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_fasta("lcsm")
+    data, filename = read_fasta("lcsm")
     solution = compute_gc_content(data)
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

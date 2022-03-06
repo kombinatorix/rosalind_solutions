@@ -1,7 +1,7 @@
 """
 https://rosalind.info/problems/rear/
 """
-from src.utils import io
+from src.utils.io import read_data, write_data
 from multiprocessing import Pool
 
 
@@ -70,22 +70,6 @@ def calculate_list_of_reversal_distances(data):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_data("rear")
-    # data = [
-    #    "1 2 3 4 5 6 7 8 9 10",
-    #    "3 1 5 2 7 4 9 6 10 8",
-    #    "",
-    #    "3 10 8 2 5 4 7 1 6 9",
-    #    "5 2 3 1 7 4 10 8 6 9",
-    #    "",
-    #    "8 6 7 9 4 1 3 10 2 5",
-    #    "8 2 7 6 9 1 5 3 10 4",
-    #    "",
-    #    "3 9 10 4 1 8 6 7 5 2",
-    #    "2 9 8 5 1 7 3 4 6 10",
-    #    "",
-    #    "1 2 3 4 5 6 7 8 9 10",
-    #    "1 2 3 4 5 6 7 8 9 10",
-    # ]
+    data, filename = read_data("rear")
     solution = calculate_list_of_reversal_distances(data)
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

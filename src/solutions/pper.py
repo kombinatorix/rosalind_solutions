@@ -1,8 +1,7 @@
 """
 https://rosalind.info/problems/pper/
 """
-from collections import Counter
-from src.utils import io
+from src.utils.io import read_data, write_data
 
 
 def compute_number_partial_permutations(n, k):
@@ -15,10 +14,8 @@ def compute_number_partial_permutations(n, k):
 
 
 if __name__ == "__main__":
-    data, filename = io.read_data("pper")
-    # data = ["21 7"]
+    data, filename = read_data("pper")
     solution = compute_number_partial_permutations(
         *map(lambda x: int(x), data[0].split(" "))
     )
-    # print(solution)
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

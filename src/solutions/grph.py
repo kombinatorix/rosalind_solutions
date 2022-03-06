@@ -1,7 +1,7 @@
 """
 https://rosalind.info/problems/grph/
 """
-from src.utils import io
+from src.utils.io import read_fasta, write_data
 from itertools import combinations
 
 
@@ -15,19 +15,6 @@ def compute_overlap_graph(genetic_strings, k):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_fasta("grph")
-    # data = [
-    #    ">Rosalind_0498",
-    #    "AAATAAA",
-    #    ">Rosalind_2391",
-    #    "AAATTTT",
-    #    ">Rosalind_2323",
-    #    "TTTTCCC",
-    #    ">Rosalind_0442",
-    #    "AAATCCC",
-    #    ">Rosalind_5013",
-    #    "GGGTGGG",
-    # ]
-    # solution = compute_overlap_3_graph(io.data_to_genetic_string(data), k=3)
+    data, filename = read_fasta("grph")
     solution = compute_overlap_graph(data, k=3)
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)

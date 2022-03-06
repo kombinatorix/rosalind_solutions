@@ -1,8 +1,8 @@
 """
 https://rosalind.info/problems/cons/
 """
-from typing import Counter
-from src.utils import io
+from collections import Counter
+from src.utils.io import read_fasta, write_data
 
 
 def compute_consensus_string(genetic_strings):
@@ -29,7 +29,6 @@ def compute_consensus_string(genetic_strings):
 
 if __name__ == "__main__":
 
-    data, filename = io.read_fasta("cons")
+    data, filename = read_fasta("cons")
     solution = compute_consensus_string(data)
-    print(solution)
-    io.write_data(solution=solution, filename=filename)
+    write_data(solution=solution, filename=filename)
